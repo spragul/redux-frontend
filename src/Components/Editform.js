@@ -40,7 +40,7 @@ function Editform({data}) {
         toast.success(response.data.message);
         console.log(response.data.product);
         dispatch(editdata(response.data.product));
-        navigate("/dashboard");
+        navigate("/admin");
       } else {
         toast.error(response.data.message);
       }
@@ -208,7 +208,7 @@ function Editform({data}) {
               Submit
             </button>{" "}
             |
-            <Link className="btn btn-danger" to={"/dashboard"}>
+            <Link className="btn btn-danger" to={"/admin"}>
               Back
             </Link>
           </div>

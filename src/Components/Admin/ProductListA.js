@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TopNavbar from "../Navbar/Topnavbar";
 import Table from "react-bootstrap/Table";
 import { backendurl } from "../Backendlink";
-import { deletedata } from "../../Redux/productSlice";
+import { deletedata, fetchData } from "../../Redux/productSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -15,6 +15,27 @@ function ProductList() {
   const myid = sessionStorage.getItem("myid");
   const dispatch = useDispatch();
 
+
+    //get All product
+    async function getdata() {
+      try {
+        const response = await axios.get(`${backendurl}/product/allproduct`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+        console.log(response.data);
+        if (response.data.rd == true) {
+          toast.success(response.data.message);
+          console.log(response.data.product);
+          dispatch(fetchData(response.data.product));
+        } else {
+          toast.error(response.data.message);
+        }
+      } catch (error) {
+        toast.error(error.response.data.message);
+        console.log(error.response.data.message);
+      }
+    }
+  
   //delete product
   async function deleteproduct(id) {
     try {
@@ -31,6 +52,15 @@ function ProductList() {
       console.log(error);
     }
   }
+  useEffect(() => {
+    if (data.length == 1 || data.length == 0) {
+      if (token) {
+        getdata();
+      } else {
+        toast.error("token not found Login again");
+      }
+    }
+  }, []);
   return (
     <TopNavbar>
       {data.length > 0 ? (
