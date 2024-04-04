@@ -19,7 +19,7 @@ const productSchemaValidation = yup.object({
   description: yup
     .string()
     .min(5, "Please enter a description more than 5 character")
-    .max(150, "Please enter a description more than 150 character")
+    .max(1050, "Please enter a description more than 150 character")
     .required("Please Fill the task description "),
   category: yup.string().required("Please Fill the task category"),
   image: yup.string().required("Please Fill the image url "),
