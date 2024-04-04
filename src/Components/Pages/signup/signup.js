@@ -91,7 +91,6 @@ const navigate =useNavigate()
               id="email"
               label="Email Address"
               name="email"
-              autoFocus
               value={values.email}
               onBlur={handleBlur}
               onChange={handleChange}
@@ -109,7 +108,6 @@ const navigate =useNavigate()
               id="Name"
               label="Name"
               name="name"
-              autoFocus
               value={values.name}
               onBlur={handleBlur}
               onChange={handleChange}
@@ -127,7 +125,6 @@ const navigate =useNavigate()
               id="username"
               label="username"
               name="username"
-              autoFocus
               value={values.username}
               onBlur={handleBlur}
               onChange={handleChange}
@@ -145,7 +142,6 @@ const navigate =useNavigate()
               id="mobile"
               label="Mobile"
               name="mobile"
-              autoFocus
               value={values.mobile}
               onBlur={handleBlur}
               onChange={handleChange}
