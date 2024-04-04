@@ -73,12 +73,12 @@ function ProductList() {
                     />
                   </td>
                   <td>
-                    <button
+                    <button className="editbutton"
                       onClick={() => navigate(`/edit/product/${tableItem._id}`)}
                     >
                       Edit
                     </button>
-                    <button onClick={() => deleteproduct(tableItem._id)}>
+                    <button className="deletebutton" onClick={() => deleteproduct(tableItem._id)}>
                       Delete
                     </button>
                   </td>

@@ -383,3 +383,24 @@ gap: 5px;
   margin-top: 100px;
 }
 
+/*edit button*/
+.editbutton{
+  border: 1px solid green;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 2px;
+  background-color: aliceblue;
+}
+.editbutton:hover{
+  background-color: aqua;
+}
+.deletebutton{
+  border: 1px solid green;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 2px;
+  background-color: rgb(231, 123, 247);
+}
+.deletebutton:hover{
+  background-color: rgb(230, 82, 99);
+}
