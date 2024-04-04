@@ -13,6 +13,7 @@ function ProductList() {
   const isloading = useSelector((state) => state.productapireducer.isLoading);
   const data = useSelector((state) => state.productapireducer.value);
   const myid = sessionStorage.getItem("myid");
+  const token=sessionStorage.getItem("token")
   const dispatch = useDispatch();
 
 
@@ -39,7 +40,7 @@ function ProductList() {
   //delete product
   async function deleteproduct(id) {
     try {
-      const response = await axios.delete(`${backendurl}/product/delete/${id}`);
+      const response = await axios.delete(`${backendurl}/product/delete/${id}`,{headers:{Authorization:`Bearer ${token}`}});
       if (response.data.rd == true) {
         toast.success(response.data.message);
         console.log(response.data);
