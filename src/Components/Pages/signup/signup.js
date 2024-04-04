@@ -91,7 +91,6 @@ const navigate =useNavigate()
               id="email"
               label="Email Address"
               name="email"
-              autoComplete="email"
               autoFocus
               value={values.email}
               onBlur={handleBlur}
@@ -110,7 +109,6 @@ const navigate =useNavigate()
               id="Name"
               label="Name"
               name="name"
-              autoComplete="Name"
               autoFocus
               value={values.name}
               onBlur={handleBlur}
@@ -129,7 +127,6 @@ const navigate =useNavigate()
               id="username"
               label="username"
               name="username"
-              autoComplete="username"
               autoFocus
               value={values.username}
               onBlur={handleBlur}
@@ -148,7 +145,6 @@ const navigate =useNavigate()
               id="mobile"
               label="Mobile"
               name="mobile"
-              autoComplete="mobile"
               autoFocus
               value={values.mobile}
               onBlur={handleBlur}
@@ -168,7 +164,6 @@ const navigate =useNavigate()
               label="Password"
               type="password"
               id="password"
-              autoComplete="password"
               value={values.password}
               onBlur={handleBlur}
               onChange={handleChange}
