@@ -47,7 +47,7 @@ export default function LoadPayment() {
           key: razorpayKey,
           amount: price,
           currency: currency,
-          name: "Rental App",
+          name: "Online Shopping App",
           description: productdata.title + "rental pay",
           order_id: order_id,
           handler: async function (response) {
